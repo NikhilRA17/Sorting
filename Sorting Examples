@@ -1,0 +1,32 @@
+// Selection Sort---->
+function selection(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let min = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[min] > arr[j]) {
+        min = j;
+      }
+    }
+    if (min != i) {
+      let temp = arr[i];
+      arr[i] = arr[min];
+      arr[min] = temp;
+    }
+  }
+  console.log(arr);
+}
+selection([45, 1, 2, 3, 4, 8, 4, 6, 42, 53, 21, 532, 6, 212, 12]);
+
+
+// Insertion Sort---->
+function insertion(arr){
+  for(let i=1; i<arr.length; i++){
+    let current = arr[i];
+    for(var j=i-1; j>=0 && arr[j]>current; j--){
+      arr[j+1] = arr[j];
+    }
+    arr[j+1] = current
+  }
+  console.log(arr)
+}
+insertion([45, 1, 2, 3, 4, 8, 4, 6, 42, 53, 21, 532, 6, 212, 12])
